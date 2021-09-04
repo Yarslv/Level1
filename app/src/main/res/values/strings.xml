@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Level1</string>
+    <string name="e_mail_field_hint">E-mail</string>
+    <string name="password_field_hint">Password</string>
+    <string name="login_screen_hello_label">Hello!</string>
+    <string name="login_screen_tips_enter_email_text">Enter your email and password bellow</string>
+    <string name="login_screen_checkbox_text">Remember me</string>
+    <string name="login_screen_forgot_password_text">Forgot your password?</string>
+    <string name="login_screen_login_button_text">Login</string>
+    <string name="login_screen_don_t_have_account_text">Don`t have account?</string>
+    <string name="login_screen_sign_up_text">Sign up</string>
+    <string name="setting_screen_setting_label_text">Settings</string>
+    <string name="setting_tips_text">Go to settings and fill out the profile</string>
+    <string name="edit_profile_button_text">Edit profile</string>
+    <string name="view_contacts_button_text">View my contacts</string>
+</resources>

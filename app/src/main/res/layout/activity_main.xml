@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/main_color"
+        app:layout_constraintBottom_toTopOf="@id/guidelineVerticalCenter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/settingLabelTextView"
+        android:text="@string/setting_screen_setting_label_text"
+        app:layout_constraintStart_toStartOf="@id/guidelineV"
+        app:layout_constraintTop_toTopOf="@id/guidelineH"
+        tools:text="@string/setting_screen_setting_label_text"
+        style="@style/big_white_text_style"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:background="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintTop_toBottomOf="@id/settingLabelTextView"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Yarik Yarik" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/careerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="@color/gray_text_color"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Yarik" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/addressLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="@color/gray_text_color"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/careerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Yarik 1111" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/linkedinImageView"
+        style="@style/social_links_style"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/linkedin"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintBottom_toTopOf="@id/recomendationTextView"
+        app:layout_constraintTop_toBottomOf="@id/backgroundView"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/facebookImageView"
+        android:src="@drawable/fb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/linkedinImageView"
+        style="@style/social_links_style" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/wkontakteImageView"
+        style="@style/social_links_style"
+        android:src="@drawable/wk"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linkedinImageView"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/viewContactsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/solid_orange_button_rounder"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineV"
+        app:layout_constraintEnd_toEndOf="@id/guidelineV2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text="@string/view_contacts_button_text"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editProfileButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_profile_button_rounder"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineV"
+        app:layout_constraintEnd_toEndOf="@id/guidelineV2"
+        app:layout_constraintBottom_toTopOf="@id/viewContactsButton"
+        android:text="@string/edit_profile_button_text"
+        android:textColor="@color/dark_gray_text_color"
+        android:textAllCaps="false" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/recomendationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineV"
+        app:layout_constraintEnd_toEndOf="@id/guidelineV2"
+        app:layout_constraintBottom_toTopOf="@id/editProfileButton"
+        android:text="@string/setting_tips_text"
+        android:textColor="@color/blue_text_color"
+        android:textAlignment="center"
+        tools:text="@string/setting_tips_text"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH"
+        style="@style/horizontal_guideline_style"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV"
+        style="@style/vertical_guideline_style"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV2"
+        style="@style/vertical_guideline_style"
+        app:layout_constraintGuide_percent="0.96" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        app:layout_constraintGuide_percent="0.5"
+        style="@style/horizontal_guideline_style" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        app:layout_constraintGuide_percent="0.65"
+        style="@style/vertical_guideline_style" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        style="@style/vertical_guideline_style"
+        app:layout_constraintGuide_percent="0.35" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
