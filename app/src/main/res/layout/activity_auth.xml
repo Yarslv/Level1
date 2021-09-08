@@ -65,12 +65,13 @@
         android:id="@+id/passwordInputLayout"
         android:textColorHint="@color/gray_input_field_color"
         style="@style/input_layout_style"
+        android:layout_marginTop="109dp"
         app:boxStrokeColor="@drawable/line_text_input_layout_selector"
         app:expandedHintEnabled="false"
         app:boxBackgroundColor="@color/main_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineV2"
         app:layout_constraintStart_toEndOf="@id/guidelineV"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/recomendationTextView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEditText"
@@ -100,12 +101,13 @@
         android:text="@string/login_screen_checkbox_text"
         android:textSize="16sp"
         android:translationX="-3dp"
+        android:layout_marginTop="200dp"
         android:paddingStart="6dp"
-        android:checked="true"
+        android:checked="false"
         android:button="@drawable/chb_selector"
         android:textColor="@color/gray_input_field_color"
         app:layout_constraintStart_toEndOf="@id/guidelineV"
-        app:layout_constraintTop_toBottomOf="@id/passwordInputLayout"/>
+        app:layout_constraintTop_toBottomOf="@id/recomendationTextView"/>
 
     <androidx.appcompat.widget.AppCompatTextView
 
