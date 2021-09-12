@@ -18,7 +18,7 @@
         style="@style/big_white_text_style" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/recomendationTextView"
+        android:id="@+id/recommendationTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
@@ -44,7 +44,7 @@
         app:boxBackgroundColor="@color/main_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineV2"
         app:layout_constraintStart_toEndOf="@id/guidelineV"
-        app:layout_constraintTop_toBottomOf="@+id/recomendationTextView"
+        app:layout_constraintTop_toBottomOf="@+id/recommendationTextView"
         style="@style/input_layout_style">
 
 
@@ -65,13 +65,13 @@
         android:id="@+id/passwordInputLayout"
         android:textColorHint="@color/gray_input_field_color"
         style="@style/input_layout_style"
-        android:layout_marginTop="109dp"
+        android:layout_marginTop="100dp"
         app:boxStrokeColor="@drawable/line_text_input_layout_selector"
         app:expandedHintEnabled="false"
         app:boxBackgroundColor="@color/main_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineV2"
         app:layout_constraintStart_toEndOf="@id/guidelineV"
-        app:layout_constraintTop_toBottomOf="@+id/recomendationTextView">
+        app:layout_constraintTop_toBottomOf="@+id/recommendationTextView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEditText"
@@ -107,19 +107,15 @@
         android:button="@drawable/chb_selector"
         android:textColor="@color/gray_input_field_color"
         app:layout_constraintStart_toEndOf="@id/guidelineV"
-        app:layout_constraintTop_toBottomOf="@id/recomendationTextView"/>
+        app:layout_constraintTop_toBottomOf="@id/recommendationTextView"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/guidelineV2"
         app:layout_constraintBottom_toBottomOf="@id/checkBox"
         app:layout_constraintTop_toTopOf="@id/checkBox"
-        android:textColor="@color/white"
         android:text="@string/login_screen_forgot_password_text"
         tools:text="@string/login_screen_forgot_password_text"
-        android:textSize="16sp"/>
+        style="@style/links_text_style"/>
 
 <androidx.appcompat.widget.AppCompatButton
     android:id="@+id/loginButton"
@@ -140,7 +136,7 @@
     android:layout_height="wrap_content"
     android:textColor="@color/gray_input_field_color"
     android:text="@string/login_screen_don_t_have_account_text"
-    tools:text="Don`t have account?"
+    tools:text="@string/login_screen_don_t_have_account_text"
     android:textSize="16sp"
     app:layout_constraintBottom_toBottomOf="@id/signUpTextView"
 
@@ -148,15 +144,12 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/signUpTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
         android:text="@string/login_screen_sign_up_text"
         tools:text="@string/login_screen_sign_up_text"
-        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline" />
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        android:layout_marginBottom="20dp"
+        style="@style/links_text_style" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

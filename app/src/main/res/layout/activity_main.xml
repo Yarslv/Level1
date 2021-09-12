@@ -44,36 +44,23 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/nameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="26sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profileCardView"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Yarik Yarik" />
+        tools:text="Yarik Yarik"
+        style="@style/major_bio_text_style" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/careerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="18sp"
-        android:textColor="@color/gray_text_color"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Yarik" />
+        tools:text="Yarik"
+        style="@style/minor_bio_text_style" />
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/addressLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="18sp"
-        android:textColor="@color/gray_text_color"
+        style="@style/minor_bio_text_style"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/careerTextView"
@@ -87,7 +74,7 @@
         android:src="@drawable/linkedin"
         app:layout_constraintStart_toStartOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
-        app:layout_constraintBottom_toTopOf="@id/recomendationTextView"
+        app:layout_constraintBottom_toTopOf="@id/recommendationTextView"
         app:layout_constraintTop_toBottomOf="@id/backgroundView"
         />
     <androidx.appcompat.widget.AppCompatImageView
@@ -135,7 +122,7 @@
         android:textAllCaps="false" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/recomendationTextView"
+        android:id="@+id/recommendationTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"

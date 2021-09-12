@@ -1,17 +1,12 @@
 package com.yprodan.level1
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.AttributeSet
 import android.util.Log
-import android.view.View
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.widget.addTextChangedListener
-import com.google.android.material.textfield.TextInputEditText
 import com.yprodan.level1.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -23,18 +18,18 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getSharedPreferences("name", Context.MODE_PRIVATE).apply {
-            binding.emailInputEditText.setText(getString("email", ""))
-            binding.passwordEditText.setText(getString("password", ""))
-            binding.checkBox.isChecked = getBoolean("isChecked", false)
-        }
+        getUserDataIfExist()
 
         binding.loginButton.setOnClickListener {
             if (isValidInputData()) {
-                if(isCheckedRememberMe()) rememberUser() else forgotUser()
+                if(isCheckedRememberMe()) {
+                    rememberUser()
+                } else {
+                    forgotUser()
+                }
                 startActivity(Intent(this, MainActivity::class.java).apply {
-                    this.putExtra(Constants.EMAIL_TAG, binding.emailInputEditText.text.toString())
-                })
+                    this.putExtra(getString(R.string.email_tag), binding.emailInputEditText.text.toString())
+                }, ActivityOptionsCompat.makeCustomAnimation(applicationContext, R.anim.swipe_left, R.anim.fade_out).toBundle())
                 finish()
             }
         }
@@ -47,18 +42,26 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
+    private fun getUserDataIfExist(){
+        getSharedPreferences(getString(R.string.shared_preferences_name_tag), Context.MODE_PRIVATE).apply {
+            binding.emailInputEditText.setText(getString(getString(R.string.email_tag), ""))
+            binding.passwordEditText.setText(getString(getString(R.string.password_tag), ""))
+            binding.checkBox.isChecked = getBoolean(getString(R.string.check_box_state_tag), false)
+        }
+    }
+
     private fun forgotUser(){
-        getSharedPreferences("name", Context.MODE_PRIVATE).edit()
-            .putString("email", "")
-            .putString("password","")
-            .putBoolean("isChecked", false).apply()
+        getSharedPreferences(getString(R.string.shared_preferences_name_tag), Context.MODE_PRIVATE).edit()
+            .putString(getString(R.string.email_tag), "")
+            .putString(getString(R.string.password_tag),"")
+            .putBoolean(getString(R.string.check_box_state_tag), false).apply()
     }
 
     private fun rememberUser() {
-        getSharedPreferences("name", Context.MODE_PRIVATE).edit()
-            .putString("email", binding.emailInputEditText.text.toString())
-            .putString("password",binding.passwordEditText.text.toString())
-            .putBoolean("isChecked", true).apply()
+        getSharedPreferences(getString(R.string.shared_preferences_name_tag), Context.MODE_PRIVATE).edit()
+            .putString(getString(R.string.email_tag), binding.emailInputEditText.text.toString())
+            .putString(getString(R.string.password_tag),binding.passwordEditText.text.toString())
+            .putBoolean(getString(R.string.check_box_state_tag), true).apply()
     }
 
     private fun isCheckedRememberMe(): Boolean {
@@ -68,23 +71,21 @@ class AuthActivity : AppCompatActivity() {
     private fun isValidInputData(): Boolean {
         var result = true
         if(binding.emailInputEditText.text.isNullOrEmpty()){
-            binding.emailInputLayout.error = "missing email"
+            binding.emailInputLayout.error = getString(R.string.missing_email_error_msg)
             result = false
         }else
         if (!"""(\w)+(.)(\w)+(@)(\w)+[.][a-z]{2,3}""".toRegex()
                 .containsMatchIn(binding.emailInputEditText.text.toString())
         ) {
-            binding.emailInputLayout.error = "incorrect email"
+            binding.emailInputLayout.error = getString(R.string.incorrect_email_error_msg)
             result = false
         }
 
         if(binding.passwordEditText.text.isNullOrEmpty()){
-            binding.passwordInputLayout.error = "missing password"
+            binding.passwordInputLayout.error = getString(R.string.missing_password_error_msg)
             result = false
         }
         Log.d("auth", "ok")
         return result
     }
-
-
 }

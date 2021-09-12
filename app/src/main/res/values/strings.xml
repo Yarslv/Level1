@@ -13,4 +13,12 @@
     <string name="setting_tips_text">Go to settings and fill out the profile</string>
     <string name="edit_profile_button_text">Edit profile</string>
     <string name="view_contacts_button_text">View my contacts</string>
+    <string name="missing_email_error_msg">missing email</string>
+    <string name="incorrect_email_error_msg">incorrect email</string>
+    <string name="missing_password_error_msg">missing password</string>
+    <string name="email_tag">email</string>
+    <string name="shared_preferences_name_tag">name</string>
+    <string name="password_tag">password</string>
+    <string name="check_box_state_tag">isChecked</string>
+    <string name="userName">%1$s %2$s</string>
 </resources>

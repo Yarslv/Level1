@@ -32,4 +32,26 @@
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:paddingStart">-17dp</item>
     </style>
+
+    <style name="major_bio_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginTop">25dp</item>
+    </style>
+
+    <style name="minor_bio_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/gray_text_color</item>
+    </style>
+
+    <style name="links_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
