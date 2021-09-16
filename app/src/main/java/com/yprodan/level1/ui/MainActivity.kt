@@ -1,8 +1,9 @@
-package com.yprodan.level1
+package com.yprodan.level1.ui
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.yprodan.level1.R
 import com.yprodan.level1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.fade_in,
-            R.anim.swipe_undo_left);
+        overridePendingTransition(
+            R.anim.fade_in,
+            R.anim.swipe_undo_left
+        )
     }
 }

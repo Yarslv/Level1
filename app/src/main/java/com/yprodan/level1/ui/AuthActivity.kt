@@ -1,4 +1,4 @@
-package com.yprodan.level1
+package com.yprodan.level1.ui
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.widget.addTextChangedListener
+import com.yprodan.level1.R
 import com.yprodan.level1.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -30,7 +31,10 @@ class AuthActivity : AppCompatActivity() {
                 }
                 startActivity(Intent(this, MainActivity::class.java).apply {
                     this.putExtra(getString(R.string.email_tag), binding.emailInputEditText.text.toString())
-                }, ActivityOptionsCompat.makeCustomAnimation(applicationContext, R.anim.swipe_left, R.anim.fade_out).toBundle())
+                }, ActivityOptionsCompat.makeCustomAnimation(applicationContext,
+                    R.anim.swipe_left,
+                    R.anim.fade_out
+                ).toBundle())
                 finish()
             }
         }
