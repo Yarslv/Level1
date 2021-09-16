@@ -24,17 +24,23 @@ class AuthActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
             if (isValidInputData()) {
-                if(isCheckedRememberMe()) {
+                if (isCheckedRememberMe()) {
                     rememberUser()
                 } else {
                     forgotUser()
                 }
-                startActivity(Intent(this, MainActivity::class.java).apply {
-                    this.putExtra(getString(R.string.email_tag), binding.emailInputEditText.text.toString())
-                }, ActivityOptionsCompat.makeCustomAnimation(applicationContext,
-                    R.anim.swipe_left,
-                    R.anim.fade_out
-                ).toBundle())
+                startActivity(
+                    Intent(this, MainActivity::class.java).apply {
+                        this.putExtra(
+                            getString(R.string.email_tag),
+                            binding.emailInputEditText.text.toString()
+                        )
+                    }, ActivityOptionsCompat.makeCustomAnimation(
+                        applicationContext,
+                        R.anim.swipe_left,
+                        R.anim.fade_out
+                    ).toBundle()
+                )
                 finish()
             }
         }
@@ -47,25 +53,34 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
-    private fun getUserDataIfExist(){
-        getSharedPreferences(getString(R.string.shared_preferences_name_tag), Context.MODE_PRIVATE).apply {
+    private fun getUserDataIfExist() {
+        getSharedPreferences(
+            getString(R.string.shared_preferences_name_tag),
+            Context.MODE_PRIVATE
+        ).apply {
             binding.emailInputEditText.setText(getString(getString(R.string.email_tag), ""))
             binding.passwordEditText.setText(getString(getString(R.string.password_tag), ""))
             binding.checkBox.isChecked = getBoolean(getString(R.string.check_box_state_tag), false)
         }
     }
 
-    private fun forgotUser(){
-        getSharedPreferences(getString(R.string.shared_preferences_name_tag), Context.MODE_PRIVATE).edit()
+    private fun forgotUser() {
+        getSharedPreferences(
+            getString(R.string.shared_preferences_name_tag),
+            Context.MODE_PRIVATE
+        ).edit()
             .putString(getString(R.string.email_tag), "")
-            .putString(getString(R.string.password_tag),"")
+            .putString(getString(R.string.password_tag), "")
             .putBoolean(getString(R.string.check_box_state_tag), false).apply()
     }
 
     private fun rememberUser() {
-        getSharedPreferences(getString(R.string.shared_preferences_name_tag), Context.MODE_PRIVATE).edit()
+        getSharedPreferences(
+            getString(R.string.shared_preferences_name_tag),
+            Context.MODE_PRIVATE
+        ).edit()
             .putString(getString(R.string.email_tag), binding.emailInputEditText.text.toString())
-            .putString(getString(R.string.password_tag),binding.passwordEditText.text.toString())
+            .putString(getString(R.string.password_tag), binding.passwordEditText.text.toString())
             .putBoolean(getString(R.string.check_box_state_tag), true).apply()
     }
 
