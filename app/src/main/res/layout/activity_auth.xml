@@ -35,28 +35,23 @@
         style="@style/horizontal_guideline_style"
         app:layout_constraintGuide_percent="0.25" />
 
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInputLayout"
         app:boxStrokeColor="@drawable/line_text_input_layout_selector"
         app:expandedHintEnabled="false"
         app:boxBackgroundColor="@color/main_color"
-        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
-        app:layout_constraintStart_toEndOf="@id/guidelineV"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVerticalRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineVerticalLeft"
         app:layout_constraintTop_toBottomOf="@+id/recommendationTextView"
         style="@style/input_layout_style">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailInputEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:hint="@string/e_mail_field_hint"
-            android:textColor="@color/gray_input_field_color"
             tools:text="ddddddddd@gg.gg"
-            />
+            style="@style/input_edit_text_style" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,28 +64,25 @@
         app:boxStrokeColor="@drawable/line_text_input_layout_selector"
         app:expandedHintEnabled="false"
         app:boxBackgroundColor="@color/main_color"
-        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
-        app:layout_constraintStart_toEndOf="@id/guidelineV"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVerticalRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineVerticalLeft"
         app:layout_constraintTop_toBottomOf="@+id/recommendationTextView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:hint="@string/password_field_hint"
             android:inputType="textPassword"
-            android:textColor="@color/gray_input_field_color"
-
+            style="@style/input_edit_text_style"
             tools:text="1q2w3e4r"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineV"
+        android:id="@+id/guidelineVerticalLeft"
         style="@style/vertical_guideline_style"
         app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineV2"
+        android:id="@+id/guidelineVerticalRight"
         style="@style/vertical_guideline_style"
         app:layout_constraintGuide_percent="0.96" />
 
@@ -106,11 +98,11 @@
         android:checked="false"
         android:button="@drawable/chb_selector"
         android:textColor="@color/gray_input_field_color"
-        app:layout_constraintStart_toEndOf="@id/guidelineV"
+        app:layout_constraintStart_toEndOf="@id/guidelineVerticalLeft"
         app:layout_constraintTop_toBottomOf="@id/recommendationTextView"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-        app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVerticalRight"
         app:layout_constraintBottom_toBottomOf="@id/checkBox"
         app:layout_constraintTop_toTopOf="@id/checkBox"
         android:text="@string/login_screen_forgot_password_text"
@@ -126,8 +118,8 @@
     android:layout_marginBottom="20dp"
     android:text="@string/login_screen_login_button_text"
     android:textSize="20sp"
-    app:layout_constraintStart_toEndOf="@id/guidelineV"
-    app:layout_constraintEnd_toStartOf="@id/guidelineV2"
+    app:layout_constraintStart_toEndOf="@id/guidelineVerticalLeft"
+    app:layout_constraintEnd_toStartOf="@id/guidelineVerticalRight"
     app:layout_constraintBottom_toTopOf="@id/signUpTextView"/>
 
 <androidx.appcompat.widget.AppCompatTextView

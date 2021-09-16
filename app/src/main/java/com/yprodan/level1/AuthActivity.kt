@@ -15,6 +15,7 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -69,23 +70,25 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun isValidInputData(): Boolean {
-        var result = true
-        if(binding.emailInputEditText.text.isNullOrEmpty()){
-            binding.emailInputLayout.error = getString(R.string.missing_email_error_msg)
-            result = false
-        }else
-        if (!"""(\w)+(.)(\w)+(@)(\w)+[.][a-z]{2,3}""".toRegex()
-                .containsMatchIn(binding.emailInputEditText.text.toString())
-        ) {
-            binding.emailInputLayout.error = getString(R.string.incorrect_email_error_msg)
-            result = false
-        }
+        with(binding) {
+            var result = true
+            if (emailInputEditText.text.isNullOrEmpty()) {
+                emailInputLayout.error = getString(R.string.missing_email_error_msg)
+                result = false
+            } else
+                if (!"""(\w)+(.)(\w)+(@)(\w)+[.][a-z]{2,3}""".toRegex()
+                        .containsMatchIn(emailInputEditText.text.toString())
+                ) {
+                    emailInputLayout.error = getString(R.string.incorrect_email_error_msg)
+                    result = false
+                }
 
-        if(binding.passwordEditText.text.isNullOrEmpty()){
-            binding.passwordInputLayout.error = getString(R.string.missing_password_error_msg)
-            result = false
+            if (passwordEditText.text.isNullOrEmpty()) {
+                passwordInputLayout.error = getString(R.string.missing_password_error_msg)
+                result = false
+            }
+            Log.d("auth", "ok")
+            return result
         }
-        Log.d("auth", "ok")
-        return result
     }
 }

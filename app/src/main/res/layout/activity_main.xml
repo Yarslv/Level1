@@ -18,7 +18,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/settingLabelTextView"
         android:text="@string/setting_screen_setting_label_text"
-        app:layout_constraintStart_toStartOf="@id/guidelineV"
+        app:layout_constraintStart_toStartOf="@id/guidelineVerticalLeft"
         app:layout_constraintTop_toTopOf="@id/guidelineH"
         tools:text="@string/setting_screen_setting_label_text"
         style="@style/big_white_text_style"/>
@@ -101,8 +101,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/solid_orange_button_rounder"
         android:layout_marginBottom="15dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineV"
-        app:layout_constraintEnd_toEndOf="@id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@id/guidelineVerticalLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVerticalRight"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/white"
         android:textSize="14sp"
@@ -114,8 +114,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_profile_button_rounder"
         android:layout_marginBottom="12dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineV"
-        app:layout_constraintEnd_toEndOf="@id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@id/guidelineVerticalLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVerticalRight"
         app:layout_constraintBottom_toTopOf="@id/viewContactsButton"
         android:text="@string/edit_profile_button_text"
         android:textColor="@color/dark_gray_text_color"
@@ -126,8 +126,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineV"
-        app:layout_constraintEnd_toEndOf="@id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@id/guidelineVerticalLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVerticalRight"
         app:layout_constraintBottom_toTopOf="@id/editProfileButton"
         android:text="@string/setting_tips_text"
         android:textColor="@color/blue_text_color"
@@ -141,12 +141,12 @@
         app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineV"
+        android:id="@+id/guidelineVerticalLeft"
         style="@style/vertical_guideline_style"
         app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineV2"
+        android:id="@+id/guidelineVerticalRight"
         style="@style/vertical_guideline_style"
         app:layout_constraintGuide_percent="0.96" />
 
